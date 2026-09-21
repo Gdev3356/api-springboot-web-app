@@ -42,12 +42,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: java-app
-      
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'api-vaga-rm563438'
-          slot-name: 'Production'
           package: '*.jar'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_980A6B5AECA14AE089B654CCB95E889D }}
